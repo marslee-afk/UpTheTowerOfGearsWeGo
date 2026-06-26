@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://b7af520faw1wb"]
+
+[ext_resource type="Script" uid="uid://mw1kxf166651" path="res://scripts/main_menu.gd" id="1_jfien"]
+
+[node name="Main_Menu" type="Control" unique_id=693005528]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UI_Space" type="Control" parent="." unique_id=2059892282]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -54.0
+offset_right = 96.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jfien")
+
+[node name="Main" type="Control" parent="UI_Space" unique_id=888677342]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_container" type="VBoxContainer" parent="UI_Space/Main" unique_id=2080441235]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="UI_Space/Main/menu_container" unique_id=373118355]
+layout_mode = 2
+text = "Start"
+
+[node name="Options" type="Button" parent="UI_Space/Main/menu_container" unique_id=1898700234]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="UI_Space/Main/menu_container" unique_id=645480883]
+layout_mode = 2
+text = "Quit"
+
+[node name="Options" type="Control" parent="UI_Space" unique_id=1785148606]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_container" type="VBoxContainer" parent="UI_Space/Options" unique_id=892600127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -29.5
+offset_right = 32.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="music_Container" type="HBoxContainer" parent="UI_Space/Options/menu_container" unique_id=588412065]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="music_volume" type="VSlider" parent="UI_Space/Options/menu_container/music_Container" unique_id=904030918]
+layout_mode = 2
+
+[node name="music_toggle" type="CheckButton" parent="UI_Space/Options/menu_container/music_Container" unique_id=1921811661]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="UI_Space/Options/menu_container" unique_id=1526038535]
+layout_mode = 2
+text = "Back"
+
+[node name="Credits" type="Control" parent="UI_Space" unique_id=1558012654]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back2" type="Button" parent="UI_Space/Credits" unique_id=1188979553]
+layout_mode = 0
+offset_top = 63.0
+offset_right = 64.0
+offset_bottom = 94.0
+text = "Back"

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://d1aw5cdvy8dm8"]
+
+[ext_resource type="Script" uid="uid://b03018tmnra3a" path="res://scripts/textbox.gd" id="1_nyk3b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ak0w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2l1t"]
+bg_color = Color(0.2123048, 0.21230489, 0.21230471, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_1uhjo"]
+
+[node name="Textbox" type="CanvasLayer" unique_id=916365796]
+script = ExtResource("1_nyk3b")
+
+[node name="TextboxContainer" type="MarginContainer" parent="." unique_id=33954371]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -238.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Textbox_bg" type="Panel" parent="TextboxContainer" unique_id=2021154689]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ak0w")
+
+[node name="Text_container" type="MarginContainer" parent="TextboxContainer" unique_id=1410970706]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="Text_container_ref" type="Panel" parent="TextboxContainer/Text_container" unique_id=890876283]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2l1t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/Text_container" unique_id=675981014]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Character name" type="Label" parent="TextboxContainer/Text_container/HBoxContainer" unique_id=725876502]
+custom_minimum_size = Vector2(40, 0)
+custom_maximum_size = Vector2(-1, 120)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_1uhjo")
+theme_override_font_sizes/font_size = 20
+text = "Sus Undertale:"
+
+[node name="Text" type="Label" parent="TextboxContainer/Text_container/HBoxContainer" unique_id=7762495]
+custom_minimum_size = Vector2(80, -1)
+custom_maximum_size = Vector2(1768, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_1uhjo")
+theme_override_font_sizes/font_size = 20
+text = "Uh uhuh uuhhuh uh uh... uh uh...asdaaaaaa"
+autowrap_mode = 2
+
+[node name="End" type="Label" parent="TextboxContainer/Text_container/HBoxContainer" unique_id=157279020]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "*"
