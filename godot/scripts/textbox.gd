@@ -64,8 +64,8 @@ func display_text():
 	label.modulate.a = 0.0
 	change_state(State.READING)
 	show_textbox()
-	$Tween.interpolate_property(label, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$Tween.start()
+	#$Tween.interpolate_property(label, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	#$Tween.start()
 
 func change_state(next_state):
 	current_state = next_state
