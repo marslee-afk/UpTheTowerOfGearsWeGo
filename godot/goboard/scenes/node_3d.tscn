@@ -20,24 +20,21 @@ script = ExtResource("3_a0tk4")
 
 [node name="board-classical_fix" parent="." unique_id=714097634 instance=ExtResource("6_divp8")]
 
-[node name="GridMap" type="GridMap" parent="." unique_id=1021942606]
+[node name="Board" type="GridMap" parent="." unique_id=1021942606]
 mesh_library = ExtResource("3_3b0n1")
 cell_size = Vector3(0.28, 1, 0.28)
 cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 cell_scale = 1.5
-data = {
-"cells": PackedInt32Array(0, 0, 0)
-}
 script = ExtResource("3_divp8")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GridMap" unique_id=1478040191]
+[node name="StaticBody3D" type="StaticBody3D" parent="Board" unique_id=1478040191]
 disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_a0tk4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/StaticBody3D" unique_id=1599308915]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/StaticBody3D" unique_id=1599308915]
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=480245394]

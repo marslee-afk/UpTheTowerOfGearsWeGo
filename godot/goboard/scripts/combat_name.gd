@@ -1,6 +1,6 @@
 class_name CombatMain extends Node3D
 
-@onready var grid_map = $GridMap
+@onready var grid_map = $Board
 @onready var camera = $Camera3D
 @onready var label = $Control/Label
 @onready var turn = $Control/CheckButton
@@ -92,16 +92,15 @@ func _input(_event):
 		and tile_on_board_vec3(ray_tile_pos)):
 			var ray_tile_pos_type : int = grid_map.get_cell_item(ray_tile_pos)
 			if ray_tile_pos_type == empty or ray_tile_pos_type == hover_cursor:
-				var pending = []
+				var _pending = []
 				var place_pos = Vector2i(ray_tile_pos.x,ray_tile_pos.z)
-				#if button is not pressed
-				if !turn.button_pressed:
-					placeGo(black, ray_tile_pos)
-					capAdjaStones(grid_map, place_pos, black, pending)
-				#if button pressed
-				else:
-					placeGo(white, ray_tile_pos)
-					capAdjaStones(grid_map, place_pos, white, pending)
+				#if button is not pressed it's black
+				var piece_color : int = black
+				if turn.button_pressed : 
+					piece_color = white
+				placeGo(piece_color, ray_tile_pos)
+				captureStonesNewer(grid_map, place_pos, piece_color)
+				
 				turn.button_pressed = !turn.button_pressed
 			else:
 				placeGo(empty, ray_tile_pos)
@@ -113,6 +112,37 @@ func placeGo(piece : int, location : Vector3i, debugging : bool = false):
 	grid_map.set_cell_item(location, piece)
 	place.pitch_scale = randf_range(0.7,4.0)
 	place.play()
+
+func captureStonesNewer(board : Board, starting_pos : Vector2i, color : int):
+	# Loop throught adjacent tiles clockwise
+	var directions : Array[Vector2i] = [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
+	#var debug_dir = ["^", ">", "v", "<"]
+	#print("Put down color : %s" % color)
+	for i in 4:
+		# We need to check if it's another color (not empty), then if it is check if it's surrounded
+		var pos_to_check = starting_pos + directions[i]
+		var tile_at_pos = board.getStone(pos_to_check.x, pos_to_check.y)
+		if tile_at_pos == empty or tile_at_pos == hover_cursor or tile_at_pos == color : 
+			#print("No ennemy tile %s, it's %s" % [debug_dir[i], tile_at_pos])
+			continue
+		#print("Checking color : %s at %s" % [tile_at_pos, debug_dir[i]])
+		if is_surrounded(board, pos_to_check, tile_at_pos):
+			#print("Tile to capture found")
+			var pos_in_3D = Vector3i(pos_to_check.x, 0, pos_to_check.y)
+			board.set_cell_item(pos_in_3D, -1)
+
+func is_surrounded(board : Board, starting_pos : Vector2i, color : int):
+	# Loop throught adjacent tiles clockwise
+	var directions : Array[Vector2i] = [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
+	#var debug_dir = ["^", ">", "v", "<"]
+	for i in 4:
+		# We need to check if it's another color to continue (aka stop if same color or empty found)
+		var pos_to_check = starting_pos + directions[i]
+		var tile_at_pos = board.getStone(pos_to_check.x, pos_to_check.y)
+		if tile_at_pos == empty or tile_at_pos == hover_cursor or tile_at_pos == color:
+			#print("No ennemy tile %s, it's %s" % [debug_dir[i], tile_at_pos])
+			return false
+	return true
 
 # Detect if / where the cursor is on the board
 func shoot_ray(debugging : bool = false):
@@ -157,7 +187,7 @@ func captureStones(board, pos, color, captures):
 
 # Recursively builds a chain of pending captures starting from (x, y)
 # Stops and returns true if chain has liberties -> false if chain found
-func recursiveCapture(board: GridMap, pos : Vector2i, color: int, pending: Array):
+func recursiveCapture(board: Board, pos : Vector2i, color: int, pending: Array):
 	#Useless for ?? reason
 	#var colorlist = {black:white, white:black}
 	#var _ocolor = colorlist[color]
@@ -175,9 +205,9 @@ func recursiveCapture(board: GridMap, pos : Vector2i, color: int, pending: Array
 		print("OppoColor check: %s != %s" % [stone_at_pos, color])
 	if (stone_at_pos == empty or stone_at_pos == hover_cursor):
 		return false # Stop if no stone found
-	print('EmptyTile check:',stone_at_pos,"==",-1)
-	if (stone_at_pos == -1):
-		return true # Stop and signal that liberty was found
+	print("EmptyTile check: %s == %s" , [stone_at_pos, -1])
+	if (stone_at_pos == empty):
+		return true # Stop and signal that liberty was found , Contradictory / redundant
 	print("duplicheck")
 	for i in len(pending):
 		if (pending[i].x == pos.x && pending[i].y == pos.y) and len(pending) > 0:
