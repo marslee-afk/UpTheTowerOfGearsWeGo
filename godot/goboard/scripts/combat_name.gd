@@ -1,6 +1,6 @@
 class_name CombatMain extends Node3D
 
-@onready var grid_map = $Board
+@onready var grid_map = $Board as Board
 @onready var camera = $Camera3D
 @onready var label = $Control/Label
 @onready var turn = $Control/CheckButton
@@ -109,7 +109,7 @@ func _input(_event):
 func placeGo(piece : int, location : Vector3i, debugging : bool = false):
 	if debugging:
 		print(piece)
-	grid_map.set_cell_item(location, piece)
+	grid_map.setStone(piece, location)
 	place.pitch_scale = randf_range(0.7,4.0)
 	place.play()
 
