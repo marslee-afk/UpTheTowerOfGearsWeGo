@@ -32,7 +32,7 @@ func _ready():
 func _process(delta):
 	match current_state:
 		State.READY:
-			if !text_queue.empty():
+			if !text_queue.is_empty():
 				display_text()
 		State.READING:
 			if Input.is_action_just_pressed("skip_action"):
@@ -61,10 +61,10 @@ func show_textbox():
 func display_text():
 	var next_text = text_queue.pop_front()
 	label.text = next_text
-	label.percent_visible = 0.0
+	label.modulate.a = 0.0
 	change_state(State.READING)
 	show_textbox()
-	$Tween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property(label, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 
 func change_state(next_state):
