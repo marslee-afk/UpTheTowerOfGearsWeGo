@@ -42,7 +42,7 @@ func _load(path: String, _original_path: String, _use_sub_threads: bool, _cache_
 		# read the file.
 		print("[Dialogic] Error opening file:", FileAccess.get_open_error())
 		return FileAccess.get_open_error()
-
+	
 	return dict_to_inst(str_to_var(file.get_as_text()))
 
 

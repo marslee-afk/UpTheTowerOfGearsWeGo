@@ -56,7 +56,6 @@ layout_mode = 2
 
 [node name="Character name" type="Label" parent="TextboxContainer/Text_container/HBoxContainer" unique_id=725876502]
 custom_minimum_size = Vector2(40, 0)
-custom_maximum_size = Vector2(-1, 120)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = SubResource("SystemFont_1uhjo")
@@ -65,7 +64,6 @@ text = "Sus Undertale:"
 
 [node name="Text" type="Label" parent="TextboxContainer/Text_container/HBoxContainer" unique_id=7762495]
 custom_minimum_size = Vector2(80, -1)
-custom_maximum_size = Vector2(1768, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0

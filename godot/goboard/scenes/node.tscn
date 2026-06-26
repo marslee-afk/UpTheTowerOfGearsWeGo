@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://dhernsg2h1qjn"]
 
 [ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/combat_name.gd" id="1_33lxu"]
-[ext_resource type="PackedScene" uid="uid://c82rbatbpqo4i" path="res://3D_models/gear_board/gear_board_1.glb" id="2_bjih1"]
 [ext_resource type="MeshLibrary" uid="uid://d02yc38lko3cx" path="res://3D_models/go-pieces.tres" id="3_bjih1"]
 [ext_resource type="Script" uid="uid://c2cooxt1656ra" path="res://goboard/scripts/pass.gd" id="4_bjih1"]
 [ext_resource type="AudioStream" uid="uid://ct4cdwydqxxwq" path="res://audio/go.stoneplacement2.0.mp3" id="5_xdqtr"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otjlk"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ra2i3"]
 
 [sub_resource type="Theme" id="Theme_xdqtr"]
 
@@ -20,16 +15,6 @@ transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 1, 0, -1, -4.3711385e-08, 0,
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=487980158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
-
-[node name="gear_board_1" parent="." unique_id=1296683511 instance=ExtResource("2_bjih1")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="gear_board_1" unique_id=1228345884]
-disable_mode = 1
-physics_material_override = SubResource("PhysicsMaterial_otjlk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gear_board_1/StaticBody3D" unique_id=1560709433]
-transform = Transform3D(3, 0, 0, 0, 0.57, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("CylinderShape3D_ra2i3")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=140842564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)

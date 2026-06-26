@@ -25,8 +25,15 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"Daughter": "res://dialogic/Daughter.dch",
+"Narrator": "res://dialogic/Narrator.dch",
+"Player": "res://dialogic/Player.dch"
+}
+directories/dtl_directory={
+"Intro (1)": "res://dialogic/Intro (1).dtl",
+"timeline": "res://dialogic/timeline.dtl"
+}
 layout/style_directory={}
 layout/style_list=[]
 layout/default_style="Default"
