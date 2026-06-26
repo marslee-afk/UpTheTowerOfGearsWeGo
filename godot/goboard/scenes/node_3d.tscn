@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djxs0if71wt3u"]
 
 [ext_resource type="MeshLibrary" uid="uid://d02yc38lko3cx" path="res://3D_models/go-pieces.tres" id="3_3b0n1"]
-[ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/node.gd" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/combat_name.gd" id="3_a0tk4"]
 [ext_resource type="Script" uid="uid://bk7uflwj1lgjy" path="res://goboard/scenes/board.gd" id="3_divp8"]
 [ext_resource type="Script" uid="uid://c2cooxt1656ra" path="res://goboard/scripts/pass.gd" id="4_3b0n1"]
 [ext_resource type="AudioStream" uid="uid://ct4cdwydqxxwq" path="res://audio/go.stoneplacement2.0.mp3" id="5_b4j1f"]
@@ -15,7 +15,7 @@ size = Vector3(3.04, 0.01, 3.04)
 
 [sub_resource type="Theme" id="Theme_3b0n1"]
 
-[node name="Node3D" type="Node3D" unique_id=774063484]
+[node name="CombatMain" type="Node3D" unique_id=774063484]
 script = ExtResource("3_a0tk4")
 
 [node name="board-classical_fix" parent="." unique_id=714097634 instance=ExtResource("6_divp8")]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhernsg2h1qjn"]
 
-[ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/node.gd" id="1_33lxu"]
+[ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/combat_name.gd" id="1_33lxu"]
 [ext_resource type="PackedScene" uid="uid://c82rbatbpqo4i" path="res://3D_models/gear_board/gear_board_1.glb" id="2_bjih1"]
 [ext_resource type="MeshLibrary" uid="uid://d02yc38lko3cx" path="res://3D_models/go-pieces.tres" id="3_bjih1"]
 [ext_resource type="Script" uid="uid://c2cooxt1656ra" path="res://goboard/scripts/pass.gd" id="4_bjih1"]
