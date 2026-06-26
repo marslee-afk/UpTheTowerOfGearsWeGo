@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b4gvwhbe2iv2j"]
+
+[ext_resource type="PackedScene" uid="uid://uuwld4ybjjuw" path="res://3D_models/go-piece-classic-white.glb" id="1_aw8l3"]
+
+[node name="go-piece-classic-white" unique_id=75469643 instance=ExtResource("1_aw8l3")]
+
+[node name="piece_002" parent="." index="0" unique_id=1000311210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

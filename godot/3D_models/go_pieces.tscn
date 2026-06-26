@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://mli4ciaa3h71"]
+
+[ext_resource type="PackedScene" uid="uid://clrxa4u2wpak6" path="res://3D_models/GoDeadSpace.glb" id="1_whpnr"]
+[ext_resource type="PackedScene" uid="uid://b4gvwhbe2iv2j" path="res://3D_models/go_piece_classic_white.tscn" id="2_yorci"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4liu5"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.32
+
+[sub_resource type="SphereMesh" id="SphereMesh_otjlk"]
+material = SubResource("StandardMaterial3D_4liu5")
+radius = 0.086
+height = 0.074
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2358e"]
+depth_draw_mode = 2
+albedo_color = Color(0.54901963, 0.70980394, 0.4862745, 1)
+metallic = 1.0
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0.18168181, 0.12907165, 0.26157886, 1)
+emission_energy_multiplier = 0.68
+
+[node name="Node3D" type="Node3D" unique_id=1182052042]
+
+[node name="black-go-piece" type="Node3D" parent="." unique_id=1274777694]
+
+[node name="piece_black" type="MeshInstance3D" parent="black-go-piece" unique_id=178118890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+mesh = SubResource("SphereMesh_otjlk")
+
+[node name="go-piece-classic-white" parent="." unique_id=75469643 instance=ExtResource("2_yorci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)
+
+[node name="GoDeadSpace" parent="." unique_id=1685072458 instance=ExtResource("1_whpnr")]
+
+[node name="trans-go-piece" type="Node3D" parent="." unique_id=1769416065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+
+[node name="piece_cursor" type="MeshInstance3D" parent="trans-go-piece" unique_id=1996962567]
+mesh = SubResource("SphereMesh_otjlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_2358e")

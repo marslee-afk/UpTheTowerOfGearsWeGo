@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://djxs0if71wt3u"]
+
+[ext_resource type="MeshLibrary" uid="uid://d02yc38lko3cx" path="res://3D_models/go-pieces.tres" id="3_3b0n1"]
+[ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/node.gd" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://bk7uflwj1lgjy" path="res://goboard/scenes/board.gd" id="3_divp8"]
+[ext_resource type="Script" uid="uid://c2cooxt1656ra" path="res://goboard/scripts/pass.gd" id="4_3b0n1"]
+[ext_resource type="AudioStream" uid="uid://ct4cdwydqxxwq" path="res://audio/go.stoneplacement2.0.mp3" id="5_b4j1f"]
+[ext_resource type="PackedScene" uid="uid://56myma0l2vuv" path="res://3D_models/board_classic_fix/board-classical_fix.glb" id="6_divp8"]
+[ext_resource type="AudioStream" uid="uid://du3r3mtx2n21l" path="res://audio/ambience.clockworkTEST.mp3" id="6_qxkoc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a0tk4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
+size = Vector3(3.04, 0.01, 3.04)
+
+[sub_resource type="Theme" id="Theme_3b0n1"]
+
+[node name="Node3D" type="Node3D" unique_id=774063484]
+script = ExtResource("3_a0tk4")
+
+[node name="board-classical_fix" parent="." unique_id=714097634 instance=ExtResource("6_divp8")]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1021942606]
+mesh_library = ExtResource("3_3b0n1")
+cell_size = Vector3(0.28, 1, 0.28)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+cell_scale = 1.5
+data = {
+"cells": PackedInt32Array(0, 0, 0)
+}
+script = ExtResource("3_divp8")
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GridMap" unique_id=1478040191]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_a0tk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/StaticBody3D" unique_id=1599308915]
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=480245394]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 1, 0, -1, -4.3711385e-08, 0, 1.9796355, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=930209240]
+transform = Transform3D(0.8660254, -2.1855692e-08, 0.5, 2.1855692e-08, 1, 5.856215e-09, -0.5, 5.856215e-09, 0.8660254, 3, 3, 2.9999998)
+
+[node name="Control" type="Control" parent="." unique_id=101241435]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_3b0n1")
+script = ExtResource("4_3b0n1")
+
+[node name="Button" type="Button" parent="Control" unique_id=1238427471]
+z_index = 1
+texture_filter = 6
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 31.0
+tooltip_text = "Pass the turn instead of placing a piece, or end your the game."
+mouse_default_cursor_shape = 2
+accessibility_name = "Pass"
+accessibility_description = "Pass Turn"
+theme_override_font_sizes/font_size = 90
+action_mode = 0
+text = "Pass"
+
+[node name="CheckButton" type="CheckButton" parent="Control" unique_id=112346018]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 3.3000002
+anchor_bottom = 3.3000002
+offset_right = 44.0
+offset_bottom = 24.0
+scale = Vector2(3, 3)
+flat = true
+
+[node name="Label" type="Label" parent="Control" unique_id=1811110384]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 28.475
+anchor_top = 0.15
+anchor_right = 28.475
+anchor_bottom = 0.15
+offset_left = -85.0
+offset_bottom = 42.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "(0,0)"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioPlace" type="AudioStreamPlayer" parent="." unique_id=474740189]
+stream = ExtResource("5_b4j1f")
+pitch_scale = 4.0
+
+[node name="AudioBGM" type="AudioStreamPlayer" parent="." unique_id=1288827170]
+stream = ExtResource("6_qxkoc")
+volume_db = -10.0
+pitch_scale = 4.0
