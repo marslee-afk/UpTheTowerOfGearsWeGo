@@ -26,7 +26,10 @@ func getIfNeighborsAre(starting_pos : Vector2i, color : int, check : Callable) -
 		var pos_to_check = starting_pos + directions[i]
 		var color_to_check = getStone(pos_to_check.x, pos_to_check.y)
 		var args = [starting_pos, pos_to_check, color, color_to_check]
-		neighbors.append(check.callv(args))
+		if tile_on_board_vec2(pos_to_check):
+			neighbors.append(check.callv(args))
+		else:
+			neighbors.append(false)
 	return neighbors
 
 func setStone(color : int, pos : Vector3i):
@@ -35,7 +38,7 @@ func setStone(color : int, pos : Vector3i):
 		# Exit if not player stone (empty & cursor)
 		return
 		
-	var posV2i : Vector2i = Vector2i(pos.x, pos.y)
+	var posV2i : Vector2i = Vector2i(pos.x, pos.z)
 	
 	# Capturing
 	var areNeiOppoGroup = getIfNeighborsAre(posV2i, color, isInAGroupOfOppoColor)
@@ -45,9 +48,10 @@ func setStone(color : int, pos : Vector3i):
 			continue
 		# Alegbra trick to toggle colors, unreadable but yea
 		var neiOppoGroup = findGroupWith(posV2i + directions[i], -color+1)
-		neiOppoGroup.liberties.remove(pos)
+		neiOppoGroup.liberties.erase(posV2i)
 		if neiOppoGroup.liberties.is_empty():
-			for stone in neiOppoGroup.stones:
+			for stone_pos in neiOppoGroup.stones:
+				var stone = Vector3i(stone_pos.x,0,stone_pos.y)
 				setStone(-1, stone)
 	
 	# Merging into group
@@ -63,17 +67,21 @@ func setStone(color : int, pos : Vector3i):
 	# Actual merging
 	var groupToJoin = null
 	if availableGroupsToMerge.is_empty():
-		print("Alone TvT")
 		groupToJoin = StoneGroup.new()
 		Colors[color].append(groupToJoin)
 	elif availableGroupsToMerge.size() == 1:
 		groupToJoin = availableGroupsToMerge[0]
 	else:
-		pass
+		groupToJoin = StoneGroup.new()
+		Colors[color].append(groupToJoin)
+		for group in availableGroupsToMerge:
+			groupToJoin.stones.append_array(group.stones)
+			groupToJoin.liberties.append_array(group.liberties)
+			Colors[color].erase(group)
 	groupToJoin.stones.append(posV2i)
 	var areEmptyNeiNotBorder = getIfNeighborsAre(posV2i, color, isEmptyNotBorder)
 	if groupToJoin.liberties.has(posV2i):
-		groupToJoin.liberties.remove(posV2i)
+		groupToJoin.liberties.erase(posV2i)
 	for i in 4:
 		if areEmptyNeiNotBorder[i] == false :
 			# Skip
@@ -89,16 +97,15 @@ func getStone(x,y) -> int:
 	return get_cell_item(Vector3i(x,0,y))
 
 func isSameColor(_starting_pos, _pos_to_check, color, color_to_check) -> bool:
+	
 	if color == color_to_check:
 		return true
 	return false
 
-func isEmptyNotBorder(_starting_pos, pos_to_check, _color, color_to_check) -> bool:
+func isEmptyNotBorder(_starting_pos, _pos_to_check, _color, color_to_check) -> bool:
 	if color_to_check != -1 and color_to_check != 3:
 		return false
-	if tile_on_board_vec2(pos_to_check):
-		return true
-	return false
+	return true
 
 func isInAGroupOfSameColor(_starting_pos, pos_to_check, color, color_to_check) -> bool:
 	if color != color_to_check:
@@ -107,7 +114,7 @@ func isInAGroupOfSameColor(_starting_pos, pos_to_check, color, color_to_check) -
 	return false
 
 func isInAGroupOfOppoColor(_starting_pos, pos_to_check, color, color_to_check) -> bool:
-	if color != color_to_check:
+	if color == color_to_check:
 		return false
 	if findGroupWith(pos_to_check, color_to_check) : return true
 	return false

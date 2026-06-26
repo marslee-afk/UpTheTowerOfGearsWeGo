@@ -64,6 +64,12 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+translation/enabled=false
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
 
 [display]
 
