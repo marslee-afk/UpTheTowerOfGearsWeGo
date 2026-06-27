@@ -1,5 +1,5 @@
 # #Introduction
-Narrator: "Welcome!
+Narrator: "Welcome!"
 join Player left [animation="fade in" length="0.3"]
 Narrator: "This is you."
 join Daughter right [animation="fade in" length="0.3"]

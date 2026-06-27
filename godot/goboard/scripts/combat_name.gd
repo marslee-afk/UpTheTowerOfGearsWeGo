@@ -102,8 +102,6 @@ func _input(_event):
 				captureStonesNewer(grid_map, place_pos, piece_color)
 				
 				turn.button_pressed = !turn.button_pressed
-			else:
-				placeGo(empty, ray_tile_pos)
 
 # Separated it in case i have to place pieces for territory reasons...
 func placeGo(piece : int, location : Vector3i, debugging : bool = false):
