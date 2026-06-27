@@ -1,14 +1,42 @@
 [gd_scene format=3 uid="uid://dhernsg2h1qjn"]
 
 [ext_resource type="Script" uid="uid://qfdhhayxkyyq" path="res://goboard/scripts/combat_name.gd" id="1_33lxu"]
+[ext_resource type="PackedScene" uid="uid://cpxvf7dos4noj" path="res://3D_models/7x7_board/7x7_board_11.glb" id="2_xdqtr"]
 [ext_resource type="MeshLibrary" uid="uid://d02yc38lko3cx" path="res://3D_models/go-pieces.tres" id="3_bjih1"]
 [ext_resource type="Script" uid="uid://c2cooxt1656ra" path="res://goboard/scripts/pass.gd" id="4_bjih1"]
 [ext_resource type="AudioStream" uid="uid://ct4cdwydqxxwq" path="res://audio/go.stoneplacement2.0.mp3" id="5_xdqtr"]
 
-[sub_resource type="Theme" id="Theme_xdqtr"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r055u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5f4p"]
+size = Vector3(3.04, 0.01, 3.04)
+
+[sub_resource type="Theme" id="Theme_p6vv8"]
 
 [node name="Node3D" type="Node3D" unique_id=649583752]
 script = ExtResource("1_33lxu")
+
+[node name="7x7_board_11" parent="." unique_id=1894390450 instance=ExtResource("2_xdqtr")]
+
+[node name="Board" type="GridMap" parent="." unique_id=140842564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh_library = ExtResource("3_bjih1")
+cell_size = Vector3(0.4, 1, 0.4)
+cell_center_x = false
+cell_center_z = false
+cell_scale = 1.5
+data = {
+"cells": PackedInt32Array(65535, 0, 2, 65534, 65535, 2, 65535, 65535, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Board" unique_id=1205979757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_r055u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/StaticBody3D" unique_id=1190354555]
+shape = SubResource("BoxShape3D_s5f4p")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1948993746]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 1, 0, -1, -4.3711385e-08, 0, 1.9796355, 0)
@@ -16,24 +44,15 @@ transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 1, 0, -1, -4.3711385e-08, 0,
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=487980158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
 
-[node name="GridMap" type="GridMap" parent="." unique_id=140842564]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-mesh_library = ExtResource("3_bjih1")
-cell_size = Vector3(0.5, 1, 0.5)
-cell_scale = 1.5
-data = {
-"cells": PackedInt32Array(65535, 0, 2, 65534, 65535, 2, 65535, 65535, 1)
-}
-metadata/_editor_floor_ = Vector3(0, 0, 0)
-
-[node name="Control" type="Control" parent="." unique_id=1809655523]
+[node name="Control2" type="Control" parent="." unique_id=714554836]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = SubResource("Theme_xdqtr")
+theme = SubResource("Theme_p6vv8")
+script = ExtResource("4_bjih1")
 
-[node name="Button" type="Button" parent="Control" unique_id=374728547]
+[node name="Button" type="Button" parent="Control2" unique_id=1563595737]
 z_index = 1
 texture_filter = 6
 layout_mode = 1
@@ -44,10 +63,21 @@ mouse_default_cursor_shape = 2
 accessibility_name = "Pass"
 accessibility_description = "Pass Turn"
 theme_override_font_sizes/font_size = 90
+action_mode = 0
 text = "Pass"
-script = ExtResource("4_bjih1")
 
-[node name="Label" type="Label" parent="Control" unique_id=1469885564]
+[node name="CheckButton" type="CheckButton" parent="Control2" unique_id=721816467]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 3.3000002
+anchor_bottom = 3.3000002
+offset_right = 44.0
+offset_bottom = 24.0
+scale = Vector2(3, 3)
+flat = true
+
+[node name="Label" type="Label" parent="Control2" unique_id=1744395950]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 28.475

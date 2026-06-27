@@ -32,6 +32,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Intro (1)": "res://dialogic/Intro (1).dtl",
+"Intro (2)": "res://dialogic/Intro (2).dtl",
 "timeline": "res://dialogic/timeline.dtl"
 }
 layout/style_directory={}

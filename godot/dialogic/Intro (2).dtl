@@ -1,0 +1,63 @@
+# #Introduction
+Narrator: "Welcome!
+join Player left [animation="fade in" length="0.3"]
+Narrator: "This is you."
+join Daughter right [animation="fade in" length="0.3"]
+Narrator: "This is your daughter."
+Daughter: "Hiii!"
+Narrator: "Do you love her?"
+- "Yes, of course!"
+- "🥰♥️🥰♥️🥰♥️"
+- "How dare you ask me that!?! Of course I do!"
+Daughter: "I love you too, Mom!"
+Narrator: "Shh! As I was saying-"
+Player: "Hey! Don't tell my daughter to shh!"
+Narrator: "ANYWAYS"
+Narrator: "Your daughter is dying."
+- "Oh no!"
+- "Nooooooo!"
+- "You monster!"
+Narrator: "Luckily, with modern technology a cure can be made."
+Daughter: "Oh good, I was getting worried."
+Narrator: "Yes, through the use of a thinking machine a novel cure can be made."
+Player: "How?"
+Narrator: "I'm getting there-"
+label expo
+Narrator: "Through the use of a thinking machine a novel cure can be created for your daughters illness."
+- "What is she sick with?"
+	Narrator: "Your daughter's produces a misfolded protein.
+	Narrator: "While this misfold doesn't impede the protein's function, the enzyme that cleaves it isn't able to cleave the misfolded version.
+	Narrator: "She'll need a novel enzyme that can cleave her misfolded proteins.
+	Narrator: "This new enzyme must also be metabolized slowly enough it has time to cleave the misfolded portion and can't be poisonous to your daughter."
+	jump expo
+- "Where is this thinking machine?"
+	Narrator: "Your country conveniently has one in a worker owned tower!"
+	jump expo
+- "Can I afford this cure or do I need a 2nd job?"
+	Narrator: "Yeah, it's affordable."
+join  center [animation="fade in" length="0.3"]
+Daughter & Player\: "Hooray!"
+Narrator: "Unfortunately..."
+Daughter & Player\: "Eh?"
+Narrator: "The tower hasn't been accepting requests through the postal service for about a month now."
+Narrator: "So your daughter will be dying shortly."
+Narrator: "Ah well, that's life."
+Daughter: "Aw man..."
+- "Screw that!"
+	Narrator: "Huh?'
+- "Nuh-uh."
+	Narrator: "Nuh-uh? What do you mean 'Nuh-uh'?"
+- "Don't worry baby. Mommy will save you."
+	Narrator: "Wait, what?"
+Player: "If they're not accepting requests through the mail, I'll just go in-person!"
+Narrator: "Wha-"
+Narrator: "That's not-"
+Narrator: "Uh, wouldn't you be interrupting them?"
+Player: "My daughter is dying."
+leave Player [animation="fade out" length="0.6"]
+join Player left [animation="fade in" length="0.6"]
+Player: "Er, where is it?"
+Narrator: "Yeah, come on. We'll need to go the station and take the red train to..."
+leave Player [animation="fade out" length="0.3"]
+leave Daughter [animation="fade out" length="0.3"]
+Daughter: "You've got this Mom!"
