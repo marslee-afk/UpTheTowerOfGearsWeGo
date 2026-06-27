@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://b7af520faw1wb"]
 
-[ext_resource type="Script" uid="uid://mw1kxf166651" path="res://scripts/main_menu.gd" id="1_jfien"]
+[ext_resource type="Script" uid="uid://dpqyylwnnw5re" path="res://scripts/main_menu.gd" id="1_jfien"]
+
+[sub_resource type="Gradient" id="Gradient_jfien"]
+offsets = PackedFloat32Array(0, 0.36746988, 1)
+colors = PackedColorArray(0.28627452, 0.3529412, 0.2627451, 1, 0.7529412, 0.5372549, 0.22352941, 1, 0.5411765, 0.49411765, 0.22745098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y2rfe"]
+gradient = SubResource("Gradient_jfien")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jfien"]
 
 [node name="Main_Menu" type="Control" unique_id=693005528]
 layout_mode = 3
@@ -11,6 +20,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1572510618]
+position = Vector2(575.00006, 322.5)
+scale = Vector2(4.6, 669)
+texture = SubResource("GradientTexture1D_y2rfe")
 
 [node name="UI_Space" type="Control" parent="." unique_id=2059892282]
 layout_mode = 1
@@ -24,13 +38,18 @@ size_flags_vertical = 3
 script = ExtResource("1_jfien")
 
 [node name="Main" type="Control" parent="UI_Space" unique_id=888677342]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -360.0
+offset_right = 320.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="menu_container" type="VBoxContainer" parent="UI_Space/Main" unique_id=2080441235]
 layout_mode = 1
@@ -40,25 +59,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Title_Card" type="Label" parent="UI_Space/Main/menu_container" unique_id=526973640]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.21568628, 0.039215688, 0.5647059, 1)
+theme_override_font_sizes/font_size = 36
+text = "Up the Tower of Gears and Go"
+horizontal_alignment = 3
+
 [node name="Start" type="Button" parent="UI_Space/Main/menu_container" unique_id=373118355]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Start"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
 
-[node name="Options" type="Button" parent="UI_Space/Main/menu_container" unique_id=1898700234]
+[node name="Options" type="Button" parent="UI_Space/Main/menu_container" unique_id=1346817558]
+visible = false
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Options"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
 
-[node name="Credits" type="Button" parent="UI_Space/Main/menu_container" unique_id=106024461]
+[node name="Credits" type="Button" parent="UI_Space/Main/menu_container" unique_id=1153463945]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Credits"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
 
-[node name="Quit" type="Button" parent="UI_Space/Main/menu_container" unique_id=645480883]
+[node name="Quit" type="Button" parent="UI_Space/Main/menu_container" unique_id=709726040]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Quit"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
 
 [node name="Options" type="Control" parent="UI_Space" unique_id=1785148606]
 visible = false
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -75,27 +127,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="sound_volume" type="Label" parent="UI_Space/Options/menu_container" unique_id=235688704]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_font_sizes/font_size = 36
+text = "Sound Volume"
+horizontal_alignment = 1
+
 [node name="music_Container" type="HBoxContainer" parent="UI_Space/Options/menu_container" unique_id=588412065]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 3
 
 [node name="music_volume" type="VSlider" parent="UI_Space/Options/menu_container/music_Container" unique_id=904030918]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
+size_flags_vertical = 4
+value = 100.0
 
 [node name="music_toggle" type="CheckButton" parent="UI_Space/Options/menu_container/music_Container" unique_id=1921811661]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="Back_options" type="Button" parent="UI_Space/Options/menu_container" unique_id=1526038535]
+[node name="toggle_music" type="Label" parent="UI_Space/Options/menu_container/music_Container" unique_id=1437962445]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_font_sizes/font_size = 28
+text = "Toggle Music"
+
+[node name="Back_options" type="Button" parent="UI_Space/Options/menu_container" unique_id=1549405743]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Back"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
 
 [node name="Credits" type="Control" parent="UI_Space" unique_id=1558012654]
 visible = false
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -112,12 +187,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Credits" type="Label" parent="UI_Space/Credits/menu_container" unique_id=824462769]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.26666668, 0.09803922, 0.5176471, 1)
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+horizontal_alignment = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="UI_Space/Credits/menu_container" unique_id=1700310804]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Text test for texting"
+theme_override_colors/default_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "		- Programming
+	WyycaTheWyven (She/They) - Battle Coder
+Made half the board battle system
+Burned several meals while making this game
+	Don_Cavalo (He/Him) - Cool Coder
+Made the menu
+Can leg press 120 kilos
+	Mystoxi (She/They) - Backend Coder
+Saved this program
+Only programmer who started with Godot knowledge
+	KARETOZ (He/Him) - Walking Coding
+Created the 2.5 D walking simulator
+He's making sick music and sounds.
+	tec (He/Him) - Code Advisor
+Advised on Godot after joining last minute
+Made their own game for The Very Serious Juniper Dev Game Jam
 
-[node name="Back_credits" type="Button" parent="UI_Space/Credits/menu_container" unique_id=1188979553]
+		- 3D Artists
+	stanroy (He/Him)
+Made the ~honey~ board
+Defaced and refaced the bees
+	Masked :) (He/Him) - Hard surface modeler
+Made the animation used in our game trailer	
+NOT a robot
+
+		- 2D Artists
+	Mathew Freedman (He/Him) - Artist
+Drew desk and The Machine
+Exists
+	steadybison (He/Him) - Artist
+Drew the bees and beekeeper and garden floor
+Is not deeply passionate about bees
+	rae (they/she) - Dog Consultant
+Drew Charlie's sprites
+A theatre kid
+	TomatoPie - Artist
+Drew all other characters
+Add that glorious mustache to Peter Alberdo
+Sound
+	Microsoft Word 2007 (He/Him) - Sound Musician
+Music
+Wishes us good night everytime he gets off
+	KARETOZ (He/Him) - Sound Musician
+Sound effects and music
+Was very pleased that the death puzzle was included
+	Doomkat98 (she/her) - Voice Actor
+Narrates the Narrator
+
+		- Dialogue		
+	RangerPuDn (He/Him) - Script Writer
+Wrote the pre-fight dialogue for Peter Alberdo
+Willing to rewrite something 10 times
+Reference Art, Cheerleader, Lore Writer
+	Idan - The Every Thing Elser
+Inadvertently appointed for 7 jobs
+Couldn't have done any of this without my amazing team"
+
+[node name="Back_credits" type="Button" parent="UI_Space/Credits/menu_container" unique_id=963929390]
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.1764706, 0, 0.5921569, 1)
+theme_override_colors/font_hover_color = Color(0.011764706, 0.58431375, 0.20392157, 1)
+theme_override_font_sizes/font_size = 36
 text = "Back"
+icon = SubResource("CanvasTexture_jfien")
+flat = true
