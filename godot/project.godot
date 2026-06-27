@@ -28,7 +28,8 @@ Dialogic="*uid://ds2q0uclmolvu"
 directories/dch_directory={
 "Daughter": "res://dialogic/Daughter.dch",
 "Narrator": "res://dialogic/Narrator.dch",
-"Player": "res://dialogic/Player.dch"
+"Player": "res://dialogic/Player.dch",
+"PlayerDaughter": "res://dialogic/PlayerDaughter.dch"
 }
 directories/dtl_directory={
 "Intro (1)": "res://dialogic/Intro (1).dtl",
