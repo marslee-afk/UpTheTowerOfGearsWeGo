@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Up the Tower of Gears We Go"
+config/description="BETA Version 0.6"
 run/main_scene="uid://b7af520faw1wb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://images/icon.svg"
@@ -26,12 +27,19 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"Classical": "res://dialogic/Dialogue/Classical.dch",
 "Daughter": "res://dialogic/Daughter.dch",
+"DaughterBed": "res://dialogic/Dialogue/DaughterBed.dch",
+"DaughterHealthy": "res://dialogic/Dialogue/DaughterHealthy.dch",
 "Narrator": "res://dialogic/Narrator.dch",
 "Player": "res://dialogic/Player.dch",
-"PlayerDaughter": "res://dialogic/PlayerDaughter.dch"
+"PlayerBack": "res://dialogic/Dialogue/PlayerBack.dch",
+"PlayerDaughter": "res://dialogic/PlayerDaughter.dch",
+"PlayerFront": "res://dialogic/Dialogue/PlayerFront.dch",
+"PlayerSide": "res://dialogic/Dialogue/PlayerSide.dch"
 }
 directories/dtl_directory={
+"Intro": "res://dialogic/Dialogue/Intro.dtl",
 "Intro (1)": "res://dialogic/Intro (1).dtl",
 "Intro (2)": "res://dialogic/Intro (2).dtl",
 "timeline": "res://dialogic/timeline.dtl"

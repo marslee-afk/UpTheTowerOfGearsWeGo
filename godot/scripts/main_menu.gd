@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	# Main menu logic
 	if (start_button.is_pressed()) :
 		#fadeout
-		get_tree().change_scene_to_file("res://scenes/world.tscn")
+		get_tree().change_scene_to_file("res://scenes/introScene.tscn")
 	if (options_button.is_pressed()) :
 		options_menu()
 	if (credits_button.is_pressed()) :
