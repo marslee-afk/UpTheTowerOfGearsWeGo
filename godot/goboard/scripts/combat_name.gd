@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 
 func tile_on_board_vec3(tile_pos : Vector3i):
 	var half_size = int(round(size/2.0))
-	return tile_pos.x < half_size and tile_pos.z < half_size
+	return tile_pos.abs().x < half_size and tile_pos.abs().z < half_size
 
 func tile_on_board_vec2(tile_pos : Vector2i):
 	var half_size = int(round(size/2.0))
@@ -63,9 +63,9 @@ func alpha_enum(board_size : int, cellpos):
 	return alphabet[index]
 
 func _input(_event):
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click") and Dialogic.current_timeline == null:
 		print("click")
-		# callibration, done when ??
+		# callibration, done on new board
 		if false:
 			print("Set positions:") # Below: test examples
 			# x = left/right ; y = foward/back ; z = up/down

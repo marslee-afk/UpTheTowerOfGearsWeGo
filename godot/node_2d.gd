@@ -2,7 +2,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.start('res://dialogic/Intro (2).dtl')
+	Dialogic.start('res://dialogic/Dialogue/Intro.dtl')
 	# Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

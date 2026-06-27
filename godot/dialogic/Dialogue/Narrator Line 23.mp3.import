@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd6gkdfpjcql6"
+path="res://.godot/imported/Narrator Line 23.mp3-fa6975869426c1c75bc97fbc55a281bd.mp3str"
+
+[deps]
+
+source_file="res://dialogic/Dialogue/Narrator Line 23.mp3"
+dest_files=["res://.godot/imported/Narrator Line 23.mp3-fa6975869426c1c75bc97fbc55a281bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

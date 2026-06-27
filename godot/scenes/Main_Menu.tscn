@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7af520faw1wb"]
 
 [ext_resource type="Script" uid="uid://dpqyylwnnw5re" path="res://scripts/main_menu.gd" id="1_jfien"]
+[ext_resource type="AudioStream" uid="uid://ctsmjn3xq8iap" path="res://audio/very_smart_music_for_menu_goty_jam_winner2.mp3" id="2_y2rfe"]
 
 [sub_resource type="Gradient" id="Gradient_jfien"]
 offsets = PackedFloat32Array(0, 0.36746988, 1)
@@ -266,3 +267,7 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 icon = SubResource("CanvasTexture_jfien")
 flat = true
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="." unique_id=483520784]
+stream = ExtResource("2_y2rfe")
+autoplay = true

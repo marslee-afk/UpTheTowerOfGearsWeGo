@@ -76,6 +76,11 @@ offset_bottom = 24.0
 scale = Vector2(3, 3)
 flat = true
 
+[node name="CheckBox" type="CheckBox" parent="Control" unique_id=1666844260]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+
 [node name="Label" type="Label" parent="Control" unique_id=1811110384]
 layout_mode = 1
 anchors_preset = -1

@@ -1,50 +1,51 @@
-Narrator: "Welcome! This is you." [Picture of MC]
-Narrator: "This is your daughter." [Slide daughter next to you.]
-Daughter: "Hiii!"
-Narrator: "Do you love her?"
-- Yes, of course!
-- 🥰♥️🥰♥️🥰♥️(Incomprehensible squealing)
-- "How dare you ask me that!?! Of course I do!"
-Daughter: "I love you too, Mom!"
-Narrator: "Shh! As I was saying-"
-Player: "Hey! Don't tell my daughter to shh!"
-Narrator: "ANYWAYS"
-Narrator: "Your daughter is dying."
-Player Choice 1\: "Oh no!"
-Player Choice 2\: "Nooooooo!"
-Player Choice 3\: "You monster!"
-Narrator: "Luckily, with modern clockwork technology a cure can be made."
-Daughter: "Oh good, I was getting worried."
-Narrator: "Through the use of a thinking machine a novel cure can be made."
-Player: "How?"
-Narrator: "I'm getting there- Through the use of a thinking machine a novel cure can be created for your daughters illness."
-Player Choice 1\: "What is she sick with?"
-Narrator: "A protein in your daughter's body is misfolded. The enzyme in charge of breaking down this protein isn't able to cleave the misfolded protein in half. Her kidneys are unable to remove the uncleaved protein from her bloodstream causing her to slowly fall ill and die. She'll need a novel enzyme that can breakdown her misfolded proteins. The novel enzyme must also be metabolized by her body slowly so it has time to cleave the misfolded proteins before the novel enzyme is broken down. It also can't be poisonous to your daughter."
-Player Choice 2\: "Where is this thinking machine?"
-Narrator: "Your country conveniently has one in a tower!" [Tower art slides in]
-Player Choice 3\: "Can I afford this cure or do I need a 2nd job?"
-Narrator: "Yeah, it's affordable."
-NOTE: LET THEM PICK MULTIPLE OPTIONS HERE.
-Daughter & Player\: "Hooray!"
-Narrator: "Unfortunately..."
-Daughter and Player\: "Eh?'
-Narrator: "The tower hasn't been accepting requests through the postal service for about a month now."
-Narrator: "So your daughter will be dying shortly."
-Narrator: "Ah well, that's life."
-Daughter: "Aw man..."
-Player Choice 1\: "Screw that!"
-Narrator: "Huh?'
-Player Choice 2\: "Nuh-uh."
-Narrator: "Nuh-uh? What do you mean 'Nuh-uh'?"
-Player Choice 3\: "Don't worry baby. Mommy will save you."
-Narrator: "Wait, what?"
-Player: "If they're not accepting requests through the mail, I'll just go in-person!"
-Narrator: "Wha-"
-Narrator: "That's not-"
-Narrator: "Uh, wouldn't you be interrupting them?"
-Player: "My daughter is dying."
-[Move off screen and then back on.]
-Player: "Er, where is it?"
-Narrator: "Yeah, come on. We'll need to go the station and take the red train to..."
-[Fade out and screen change to black]
-Daughter: "You've got this Mom!"
+Hello! Thanks for playing our game. Unfortunately, this is all we managed to get done in the provided timeframe.
+Now, credits! Everyone likes credits, right? After all, this entire project would have been dust in the wind without everyone's help. Seriously.
+Programmer: WyycaTheWyvern (She/They) - Battle Coder\
+Made half of the board battle system\
+Burned several meals while making this game.
+Programmer: Don_Cavalo (He/Him) - Cool Coder\
+Made the menu\
+Can leg press 120 kilos.
+Programmer: Mystoxi (She/They) - Backend Coder\
+Saved this program\
+Only programmer who started with Godot knowledge
+Programmer: KARETOZ (He/Him) - Walking Coding\
+Created the 2.5 D walking simulator\
+He's making sick music and sounds.
+Programmer: tec (He/Him) - Code Advisor\
+Advised on Godot after joining last minute\
+Made their own game for The Very Serious Juniper Dev Game Jam.
+3Dart: stanroy (He/Him) - Board/piece maker\
+Made the ~honey~ board\
+Defaced and refaced the bees.
+3Dart: Masked \:) (He/Him) - Hard surface modeller\
+Made the animation used in our game trailer\
+Is NOT a robot.
+2Dart: Mathew Freedman (He/Him) - Artist\
+Drew desk and The Machine\
+Exists.
+2Dart: steadybison (He/Him) - Artist\
+Drew the bees and beekeeper and garden floor\
+Is not deeply passionate about bees.
+2Dart: rae (they/she) - Dog Consultant\
+Drew Charlie's sprites\
+A theatre kid.
+2Dart: TomatoPie - Artist\
+Drew all other characters\
+Add that glorious mustache to Peter Alberdo.
+Sound: Microsoft Word 2007 (He/Him) - Sound Musician\
+Music\
+Wishes us good night everytime he gets off.
+Sound: KARETOZ (He/Him) - Sound Musician\
+Sound effects and music\
+Is allergic to cats and dogs and 54 other things you cant name. Bees potentially included.
+Sound: Doomkat98 (she/her) - Voice Actor\
+Narrates the Narrator\
+Plays Magic the Gathering.
+Dialouge: RangerPuDn (He/Him) - Script Writer\
+Wrote the pre-fight dialogue for Peter Alberdo\
+Willing to rewrite something 10 times.
+raclw: Idan - The Every Thing Elser\
+Inadvertently appointed for 7 jobs\
+Couldn't have done any of this without my amazing team.
+And thanks to you, for playing this game!

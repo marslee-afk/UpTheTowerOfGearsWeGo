@@ -6,7 +6,7 @@ extends Control
 @onready var options_button = $Main/menu_container/Options
 @onready var credits_button = $Main/menu_container/Credits
 @onready var quit_button = $Main/menu_container/Quit
-
+@onready var music = $MenuTheme
 # Options buttons
 @onready var music_slider = $Options/menu_container/music_Container/music_volume
 @onready var music_toggle = $Options/menu_container/music_Container/music_toggle
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Main menu logic
 	if (start_button.is_pressed()) :
 		#fadeout
