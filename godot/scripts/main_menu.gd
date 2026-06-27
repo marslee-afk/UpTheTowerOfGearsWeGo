@@ -5,7 +5,7 @@ extends Control
 @onready var start_button = $Main/menu_container/Start
 @onready var options_button = $Main/menu_container/Options
 @onready var credits_button = $Main/menu_container/Credits
-@onready var quit_button = $Main/menu_container/Credits
+@onready var quit_button = $Main/menu_container/Quit
 
 # Options buttons
 @onready var music_slider = $Options/menu_container/music_Container/music_volume
@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 	if (credits_button.is_pressed()) :
 		credits_menu()
 	if (quit_button.is_pressed()) :
-		print ("Quit pressed")
 		get_tree().quit()
 
 	# Options menu logic
