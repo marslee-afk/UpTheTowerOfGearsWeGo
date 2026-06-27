@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Up the Tower of Gears We Go"
+config/description="BETA Version 0.6"
 run/main_scene="uid://b7af520faw1wb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://images/icon.svg"
