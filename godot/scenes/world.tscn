@@ -28,17 +28,49 @@ environment = SubResource("Environment_ae57l")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1017989143]
-transform = Transform3D(12.224172, 0, 0, 0, 1, 0, 0, 0, 11.37154, 0, 0, 0)
+[node name="Floor_mesh" type="MeshInstance3D" parent="." unique_id=1017989143]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 0, 0, 0)
 mesh = SubResource("BoxMesh_ew6px")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1431067566]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor_mesh" unique_id=1431067566]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=2095845898]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_mesh/StaticBody3D" unique_id=2095845898]
+shape = SubResource("ConvexPolygonShape3D_p26a0")
+
+[node name="Invis_Wall+x" type="MeshInstance3D" parent="." unique_id=762205662]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 14, 7, 2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Invis_Wall+x" unique_id=1561940831]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invis_Wall+x/StaticBody3D" unique_id=963353595]
+shape = SubResource("ConvexPolygonShape3D_p26a0")
+
+[node name="Invis_Wall-x" type="MeshInstance3D" parent="." unique_id=8898463]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 14, -7, 2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Invis_Wall-x" unique_id=419632550]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invis_Wall-x/StaticBody3D" unique_id=2069492504]
+shape = SubResource("ConvexPolygonShape3D_p26a0")
+
+[node name="Invis_Wall+z" type="MeshInstance3D" parent="." unique_id=2033996337]
+transform = Transform3D(12, 0, 0, 0, 5, 0, 0, 0, 2, 0, 2, 7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Invis_Wall+z" unique_id=938759581]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invis_Wall+z/StaticBody3D" unique_id=551572234]
+shape = SubResource("ConvexPolygonShape3D_p26a0")
+
+[node name="Invis_Wall-z" type="MeshInstance3D" parent="." unique_id=278480282]
+transform = Transform3D(12, 0, 0, 0, 5, 0, 0, 0, 2, 0, 2, -7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Invis_Wall-z" unique_id=442683381]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invis_Wall-z/StaticBody3D" unique_id=278825957]
 shape = SubResource("ConvexPolygonShape3D_p26a0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1461399136]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 6, 8)
 
 [node name="Player" parent="." unique_id=14770892 instance=ExtResource("1_pak4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3976603, 1.5, 1.2766047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.398, 0.6, 1.277)
