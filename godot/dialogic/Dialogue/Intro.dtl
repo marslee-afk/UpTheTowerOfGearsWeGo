@@ -1,0 +1,71 @@
+# #Introduction
+[voice path="res://dialogic/Dialogue/Narrator Line 1.mp3" volume="0.0"]
+join Player left [animation="Fade In"]
+Narrator: "Welcome! This is you."
+[voice path="Narrator Line 2.mp3" volume="0.0"]
+join Daughter right [animation="fade in"]
+Narrator: "This is your daughter."
+Daughter: "Hiii!"
+[voice path="Narrator Line 3.mp3" volume="0.0"]
+Narrator: "Do you love her?"
+- "Yes, of course!"
+- "🥰♥️🥰♥️🥰♥️"
+- "How dare you ask me that!?! Of course I do!"
+Daughter: "I love you too, Mom!"
+[voice path="Narrator Line 4.mp3" volume="0.0"]
+Narrator: "Shush. As I was saying-"
+Player: "Hey! Don't tell my daughter to shh!"
+[voice path="Narrator Line 5.mp3" volume="0.0"]
+Narrator: "ANYWAYS"
+[voice path="Narrator Line 6.mp3" volume="0.0"]
+Narrator: "Your daughter is dying."
+- "Oh no!"
+- "Nooooooo!"
+- "You monster!"
+[voice path="Narrator Line 7.mp3" volume="0.0"]
+Narrator: "Luckily, with modern technology a cure can be made."
+Daughter: "Oh good, I was getting worried."
+[voice path="Narrator Line 8.mp3" volume="0.0"]
+Narrator: "Yes, through the use of a thinking machine a novel cure can be made."
+Player: "How?"
+[voice path="Narrator Line 9.mp3" volume="0.0"]
+Narrator: "I'm getting there. Through the use of a thinking machine a novel cure can be created for your daughters illness."
+label expo
+- "Where is this thinking machine?"
+	[voice path="Narrator Line 10.mp3" volume="0.0"]
+	Narrator: "Your country conveniently has one in a worker owned tower!"
+	jump expo
+- "What is she sick with?"
+	Narrator: "Your daughter's produces a misfolded protein.
+	Narrator: "While this misfold doesn't impede the protein's function, the enzyme that cleaves it isn't able to cleave the misfolded version.
+	Narrator: "She'll need a novel enzyme that can cleave her misfolded proteins.
+	Narrator: "This new enzyme must also be metabolized slowly enough it has time to cleave the misfolded portion and can't be poisonous to your daughter."
+	jump expo
+- "Can I afford this cure or do I need a 2nd job?" Ends questioning
+	Narrator: "Yeah, it's affordable."
+PlayerDaughter: "Hooray!"
+Narrator: "Unfortunately..."
+PlayerDaughter: "Eh?"
+Narrator: "The tower hasn't been accepting requests through the postal service for about a month now."
+Narrator: "So your daughter will be dying shortly."
+Narrator: "Ah well, that's life."
+Daughter: "Aw man..."
+- "Screw that!"
+	Narrator: "Huh?'
+- "Nuh-uh."
+	Narrator: "Nuh-uh? What do you mean 'Nuh-uh'?"
+- "Don't worry baby. Mommy will save you."
+	Narrator: "Wait, what?"
+Player: "If they're not accepting requests through the mail, I'll just go in-person!"
+Narrator: "Wha-"
+Narrator: "That's not-"
+Narrator: "Uh, wouldn't you be interrupting them?"
+Player: "My daughter is dying."
+leave Player [animation="Slide To Left" length="0.6" wait="true"]
+[wait time="1.0"]
+join Player left [animation="Slide From Left" length="0.6" wait="true"]
+Player: "Er, where is it?"
+Narrator: "Yeah, come on. We'll need to go the station and take the red train to..."
+leave Player [animation="fade out" length="0.1"]
+Daughter: "You've got this Mom!"
+leave Daughter [animation="fade out" length="0.35"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dgk1akbnfw1sb"]
+
+[ext_resource type="Script" uid="uid://cyjvgg4we2wh8" path="res://node_2d.gd" id="1_s0r5s"]
+
+[node name="Node2D" type="Control" unique_id=1817511924]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s0r5s")
